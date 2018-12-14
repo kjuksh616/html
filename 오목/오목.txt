@@ -1,0 +1,44 @@
+
+for(i = 1; i< 20*20; i++){
+    var a = box().append().size(20).border(1).click(turn1).color('white').id(i);
+}
+var a2 = new Array();
+for(j = 0; j<20; j++){
+    a2[j] = new Array(20);
+
+}
+var b = 0;    
+function turn1(bx){
+    if(bx.color()=='white'&& b==0){
+        bx.color('blue');
+        b=b+1;
+        number=0;
+        alert(bx.id());
+    }
+    else if(bx.color()=='white'&& b==1){
+        bx.color('red');
+        b=b+1;
+        number=0;
+        alert(bx.id());
+    }if(b==2){
+        b=0;
+    }if(b==3){
+        b=1;
+    }
+    
+}
+
+box().append().timer(onTimer, 1000);
+
+var number = 0;
+function onTimer(bx) {
+    bx.text(number++);
+    if(number>5){
+        b=b+1
+        number=0
+    }
+}
+
+function victory(bx){
+    a[4][5] = ('blue')
+}
